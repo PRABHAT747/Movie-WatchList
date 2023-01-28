@@ -19,9 +19,12 @@ async function getmovieList2(imb){
 render()
 async function render(){
     
-    const infolist = JSON.parse(localStorage.getItem("array"))
+    let infolist
+    if(localStorage.getItem("array")){
+    infolist = JSON.parse(localStorage.getItem("array"))
+    }
     //console.log(infolist)
-    if(infolist.length>0){       
+    if(infolist){       
     loading()
     let temp=``
     for(let list of infolist){
